@@ -80,9 +80,36 @@ h6 {
   font-family: "Poppins", serif;
 }
 
+#header .animate-charcter
+{
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #18d26e 0%,
+    #aaff72 29%,
+    #ffa341 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 60px;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
 #header h1 a,
 #header h1 a:hover {
-  color: #ffc800;
+  color: #fcc600;
   line-height: 1;
   display: inline-block;
 }
@@ -127,13 +154,17 @@ h6 {
   background: black;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 540px) {
   #header {
     background: #040404 url("../img/phone_bg.jpg") top center no-repeat;
   }
+
+  #header .animate-charcter {
+    font-size: 35px;
+  }
   #header h1 {
-    margin-top: 100%;
-    font-size: 36px;
+    padding-top: 100%;
+    font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
@@ -148,7 +179,7 @@ h6 {
   }
 
   #header .container {
-    margin-bottom: 20%;
+    margin-bottom: 5in;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,9 +202,10 @@ h6 {
   }
 }
 
+
 /* Header Top */
 #header.header-top {
-  height: 80px;
+  height: 100px;
   position: fixed;
   left: 0;
   top: 0;
@@ -208,7 +240,12 @@ h6 {
 @media (max-width: 768px) {
   #header.header-top {
     height: 60px;
-  }
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+}
 
   #header.header-top h1 {
     font-size: 26px;
@@ -288,6 +325,13 @@ h6 {
 .navbar .active:focus,
 .navbar li:hover > a {
   color: #fff;
+}
+
+@media (max-width: 540%){
+  .navbar {
+    margin-top: 35%;
+    
+  }
 }
 
 /**
@@ -383,8 +427,10 @@ section.section-show {
 }
 
 section .container {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 30px;
+  background: rgb(5,4,4);
+  background: linear-gradient(144deg, rgba(5,4,4,1) 50%, rgba(39,82,33,1) 100%);
+  padding: 25px;
+  margin-top: 0%;
 }
 
 @media (max-width: 768px) {
@@ -463,6 +509,19 @@ section .container {
   margin-bottom: 0;
 }
 
+.about-me .btn-container{
+  padding-top: 30px;
+  text-align: center;
+
+}
+.about-me .button {
+background: #fcc600;
+font-size: 20px;
+padding-left: 30px;
+font-family: 'Franklin Gothic Medium';
+color: #000000;
+}
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -485,7 +544,7 @@ section .container {
   transform: translateX(-50%);
   font-size: 24px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 12px;
+  padding: 10px;
   color: #ffc800;
   border-radius: 50px;
   line-height: 0;
@@ -538,7 +597,8 @@ section .container {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #ffc800;
+  background: rgb(7,252,255);
+  background: linear-gradient(99deg, rgba(7,252,255,1) 0%, rgba(251,210,59,0.9360994397759104) 100%);
 }
 
 /*--------------------------------------------------------------
@@ -575,10 +635,18 @@ section .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 20vh;
   margin: 10%;
-  
+  transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(0%); /* FF 35+ */
 }
+
+.interests .source:hover {
+  -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  filter: grayscale(100%); /* FF 35+ */
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -1188,6 +1256,53 @@ section .container {
     transform: rotate(360deg);
   }
 }
+
+/*--------------------------------------------------------------
+# Certificate
+--------------------------------------------------------------*/
+.contact .certificate-item {
+  margin-top: 5%;
+}
+
+
+
+/*--------------------------------------------------------------
+# Add ons modify
+--------------------------------------------------------------*/
+/* BACK TO TOP */
+
+html {
+	scroll-behavior: smooth;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fcc600;
+	border-radius: 0.2rem;
+	padding: 1.%;
+	text-decoration: none;
+	transition: 0.1s ease-out;
+}
+
+.back-to-top span {
+	color: #000000;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+	background-color: #fcc600;
+}
+.back-to-top:hover span {
+	transform: translateY(-4px);
+}
+
+
 
 /*--------------------------------------------------------------
 # Credits
