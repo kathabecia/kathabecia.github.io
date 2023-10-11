@@ -483,10 +483,16 @@ section.section-show {
 }
 
 section .container {
-  background: rgb(5,4,4);
-  background: linear-gradient(144deg, rgba(5,4,4,1) 50%, rgba(39,82,33,1) 100%);
+  /*background: rgb(5,4,4);
+  background: linear-gradient(144deg, rgba(5,4,4,1) 50%, rgba(39,82,33,1) 100%);*/
   padding: 25px;
   margin-top: 0%;
+  animation: mymove 15s infinite;
+}
+
+@keyframes mymove {
+  from {  background: rgba(5, 4, 4, 0.991);}
+  to {background: linear-gradient(144deg, rgb(5, 4, 4) 0%, rgba(0, 89, 33, 0.637) 100%);}
 }
 
 @media (max-width: 768px) {
@@ -1357,8 +1363,6 @@ html {
 .back-to-top:hover span {
 	transform: translateY(-4px);
 }
-
-/*loader*/
 
 
 
